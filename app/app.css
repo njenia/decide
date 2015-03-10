@@ -33,12 +33,21 @@ li {
     list-style: none;
 }
 
+
 .pros {
     float: left;
-    margin-left: 30%;
+    margin-left: 10%;
 }
 
 .cons {
     float: right;
-    margin-right: 30%;
+    margin-right: 10%;
+}
+
+md-item-content {
+    margin-top: 10px;
+}
+
+md-dialog {
+    width: 50%;
 }

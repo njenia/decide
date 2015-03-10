@@ -9,12 +9,11 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
         });
     }])
 
-    .controller('View1Ctrl', ['$scope', '$mdDialog', function ($scope, $mdDialog) {
-        $scope.pros = ['asdf'];
-        $scope.cons = ['fdsad'];
-
+    .controller('View1Ctrl', ['$scope', '$mdDialog', '$timeout', function ($scope, $mdDialog, $timeout) {
+        $scope.pros = ['asdf fasdfaf awef wfawefawdfwef awefa wfadsfwaef awef'];
+        $scope.cons = ['fdsad afwfawdfwa fawefawdfadwfawfwawdfawdf  fwfaw ffawfawefwa'];
+        var textFocusDelay = 700;
         $scope.addPro = function ($event) {
-
             $mdDialog
                 .show({
                     templateUrl: 'view1/textDialog.html',
@@ -31,10 +30,34 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
                 .then(function (text) {
                     $scope.pros.push(text);
                 });
+
+            $timeout(function () {
+                $('#text').focus();
+            }, textFocusDelay);
         };
 
-        $scope.addCon = function () {
+        $scope.addCon = function ($event) {
+            $mdDialog
+                .show({
+                    templateUrl: 'view1/textDialog.html',
+                    controller: function ($scope, $mdDialog) {
+                        $scope.ok = function () {
+                            $mdDialog.hide($scope.text);
+                        };
+                        $scope.cancel = function () {
+                            $mdDialog.hide();
+                        }
+                    },
+                    targetEvent: $event
+                })
+                .then(function (text) {
+                    $scope.cons.push(text);
+                });
 
-        }
+            $timeout(function () {
+                $('#text').focus();
+            }, textFocusDelay);
+        };
+
 
     }]);

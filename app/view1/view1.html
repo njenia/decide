@@ -1,18 +1,32 @@
-<div class="pros">
-    <h1>Pros</h1>
-    <md-button ng-click="addPro($event)">
-        Add
-    </md-button>
-    <ul>
-        <li ng-repeat="pro in pros">
-            <span ng-bind="pro"></span>
-        </li>
-    </ul>
-</div>
+<div layout="row" class="content-container">
 
-<div class="cons">
-    <h1>Cons</h1>
-    <ul>
-        <li ng-repeat="con in cons">con</li>
-    </ul>
+    <div layout="column" class="pros">
+
+        <h1>Pros</h1>
+        <md-button ng-click="addPro($event)" class="md-primary">
+            Add
+        </md-button>
+        <md-list>
+            <md-list-item ng-repeat="pro in pros">
+                <md-item-content>
+                    <span ng-bind="pro"></span>
+                </md-item-content>
+            </md-list-item>
+        </md-list>
+    </div>
+    <div flex></div>
+    <div layout="column" class="cons">
+        <h1>Cons</h1>
+        <md-button ng-click="addCon($event)" class="md-primary">
+            Add
+        </md-button>
+        <md-list>
+            <md-list-item ng-repeat="con in cons">
+                <md-item-content>
+                    <span ng-bind="con"></span>
+                </md-item-content>
+            </md-list-item>
+        </md-list>
+    </div>
+
 </div>
