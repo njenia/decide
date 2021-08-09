@@ -30,7 +30,7 @@ Clone the angular-seed repository using [git][git]:
 git clone https://github.com/angular/angular-seed.git
 cd angular-seed
 ```
-
+mongodb://f77_oe_85_staging:LcCh_264855c6M@db.froike.com
 If you just want to start a new project without the angular-seed commit history then you can do:
 
 ```bash
