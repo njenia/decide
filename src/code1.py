@@ -1,2 +1,0 @@
-fasdfasdf
-aws_access_key_id=AKIA4HK52OLFBIEY7KTR
