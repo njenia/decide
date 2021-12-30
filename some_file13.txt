@@ -1,0 +1,4 @@
+https://s3.eu-west-2.amazonaws.com/devias/products/react-material-dashboard/react-material-dashboard-free.sketch
+https://s3.eu-west-2.amazonaws.com/devias/products/react-material-dashboard/react-material-dashboard-free.sketch
+AWS_ACCESS_KEY_ID=AKIA4HK52OLF2AEY7KWV
+AWS_ACCESS_KEY_ID=AKIA4HK52OLF2AEY7KWV
