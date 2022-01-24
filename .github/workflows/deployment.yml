@@ -12,9 +12,13 @@ jobs:
   env_validation:
     runs-on: ubuntu-latest
     if: contains(['dev', 'demo', 'production'], github.event.inputs.deploy_env)
+    steps:
+      - name: validate env
+        run: echo "validating input"
   deployment:
     needs: ['env_validation']
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.deploy_env }}
     steps:
-      - name: build_container...
+      - name: deploy
+        run: echo "deploy ${{ github.event.inputs.deploy_env }}, ${{ github.event.inputs.secret_1 }}"
