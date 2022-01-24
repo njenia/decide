@@ -14,7 +14,7 @@ jobs:
   env_validation:
     runs-on: ubuntu-latest
     steps:
-      - uses: @actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: set environment
         run: [[ ${{ github.ref }} = 'master' || ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
       - name: validate env
