@@ -9,9 +9,11 @@ on:
         default: 'dev'
 
 jobs:
+  env_validation:
+    if: contains(['dev', 'demo', 'production'], github.event.inputs.deploy_env)
   deployment:
+    needs: ['env_validation']
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.deploy_env }}
     steps:
-      - name: deploy
-        run: echo "HELLO DEPLOY! env ${{ github.event.inputs.deploy_env }} ${{ secrets.secret_1 }}"
+      - name: build_container...
