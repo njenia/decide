@@ -6,7 +6,7 @@ on:
       deploy_env:
         description: 'target environment'
         required: true
-  on:
+  push:
     branches:
       - master
 
