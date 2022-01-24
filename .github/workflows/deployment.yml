@@ -14,4 +14,4 @@ jobs:
     environment: ${{ inputs.deploy_env }}
     steps:
       - name: deploy
-        run: echo "HELLO DEPLOY! ${{ secrets.secret_1 }}"
+        run: echo "HELLO DEPLOY! env: ${{ inputs.deploy_env }} secret_1: ${{ secrets.secret_1 }}"
