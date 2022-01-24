@@ -6,7 +6,6 @@ on:
       deploy_env:
         description: 'target environment'
         required: true
-        default: 'dev'
 
 jobs:
   env_validation:
@@ -15,7 +14,7 @@ jobs:
     steps:
       - name: validate env
         run: |
-          echo "${{ github.event.inputs.deploy_env }} has to be one of 'dev'/'demo'/'production'"
+          echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
           exit 1
   deployment:
     needs: ['env_validation']
