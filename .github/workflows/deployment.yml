@@ -25,8 +25,8 @@ jobs:
   deployment:
     needs: ['env_validation']
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.deploy_env }}
+    environment: $DEPLOY_ENV
     if: success()
     steps:
       - name: deploy
-        run: echo "deploy ${{ github.event.inputs.deploy_env }}, ${{ github.event.inputs.secret_1 }}"
+        run: echo "deploy $DEPLOY_ENV, ${{ github.event.inputs.secret_1 }}"
