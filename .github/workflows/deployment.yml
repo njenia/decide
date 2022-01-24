@@ -11,7 +11,7 @@ on:
 jobs:
   env_validation:
     runs-on: ubuntu-latest
-    if: contains(['dev', 'demo', 'production'], github.event.inputs.deploy_env)
+    if: github.event.inputs.deploy_env == 'dev' || github.event.inputs.deploy_env == 'demo' || github.event.inputs.deploy_env == 'production'
     steps:
       - name: validate env
         run: echo "validating input"
