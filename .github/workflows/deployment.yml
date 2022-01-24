@@ -6,13 +6,19 @@ on:
       deploy_env:
         description: 'target environment'
         required: true
+  on:
+    branches:
+      - master
 
 jobs:
   env_validation:
     runs-on: ubuntu-latest
-    if: github.event.inputs.deploy_env != 'dev' && github.event.inputs.deploy_env != 'demo' && github.event.inputs.deploy_env != 'production'
     steps:
+      - uses: @actions/checkout@v2
+      - name: set environment
+        run: [[ ${{ github.ref }} = 'master' || ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
       - name: validate env
+        if: github.event.inputs.deploy_env != 'dev' && github.event.inputs.deploy_env != 'demo' && github.event.inputs.deploy_env != 'production' && (github.event_name == 'push' || github.)
         run: |
           echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
           exit 1
