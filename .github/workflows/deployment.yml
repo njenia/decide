@@ -9,10 +9,16 @@ on:
         default: 'dev'
 
 jobs:
+  env_validation:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.deploy_env != 'dev' && github.event.inputs.deploy_env != 'demo' && github.event.inputs.deploy_env != 'production'
+    steps:
+      - name: validate env
+        run: exit 1
   deployment:
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.deploy_env }}
-    if: github.event.inputs.deploy_env == 'dev' || github.event.inputs.deploy_env == 'demo' || github.event.inputs.deploy_env == 'production'
+    if: success()
     steps:
       - name: deploy
         run: echo "deploy ${{ github.event.inputs.deploy_env }}, ${{ github.event.inputs.secret_1 }}"
