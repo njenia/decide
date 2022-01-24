@@ -18,6 +18,8 @@ jobs:
       - name: set environment
         run: |
           [[ ${{ github.ref }} = 'master' || ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
+      - name: print env
+        run: echo ${{ env.DEPLOY_ENV }}
       - name: validate env
         if: (env.DEPLOY_ENV != 'dev' && env.DEPLOY_ENV != 'demo' && env.DEPLOY_ENV != 'production')
         run: |
