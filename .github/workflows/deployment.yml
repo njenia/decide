@@ -19,7 +19,7 @@ jobs:
         run: |
           [[ ${{ github.ref }} = 'master' || ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
       - name: validate env
-        if: github.event.inputs.deploy_env != 'dev' && github.event.inputs.deploy_env != 'demo' && github.event.inputs.deploy_env != 'production' && (github.event_name == 'push' || github.)
+        if: ($DEPLOY_ENV != 'dev' && $DEPLOY_ENV != 'demo' && $DEPLOY_ENV != 'production')
         run: |
           echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
           exit 1
