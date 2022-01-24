@@ -1,11 +1,17 @@
 name: Deployment
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_env:
+        description: 'target environment'
+        required: true
+        default: 'dev'
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: production
+    environment: ${{ inputs.deploy_env }}
     steps:
       - name: deploy
-        run: echo HELLO DEPLOY!
+        run: echo "HELLO DEPLOY! ${{ secrets.secret_1 }}"
