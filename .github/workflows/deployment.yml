@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: set environment
         run: |
-          [[ ${{ github.ref }} == 'nnonoo' || ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
+          [[ ${{ github.ref }} == 'refs/heads/master' && ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
       - name: print env
         run: echo ${{ env.DEPLOY_ENV }}
       - name: validate env
