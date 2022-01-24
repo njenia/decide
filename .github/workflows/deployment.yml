@@ -30,4 +30,4 @@ jobs:
     if: success()
     steps:
       - name: deploy
-        run: echo "deploy $DEPLOY_ENV, ${{ github.event.inputs.secret_1 }}"
+        run: echo "deploy ${{env.DEPLOY_ENV}}, ${{ github.event.inputs.secret_1 }}"
