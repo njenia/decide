@@ -10,6 +10,7 @@ on:
 
 jobs:
   env_validation:
+    runs-on: ubuntu-latest
     if: contains(['dev', 'demo', 'production'], github.event.inputs.deploy_env)
   deployment:
     needs: ['env_validation']
