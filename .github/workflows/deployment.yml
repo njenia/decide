@@ -48,7 +48,6 @@ jobs:
       - id: deploy
         run: |
           echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
-          exit 1
       - name: Notify Slack - deploy finished
         uses: rtCamp/action-slack-notify@v2
         if: always()
@@ -56,6 +55,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
           MSG_MINIMAL: actions url
           SLACK_USERNAME: Deployment
+          SLACK_FOOTER: ""
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: "@here [**${{ needs.env_processing.outputs.deploy_env }}**] deploy - ${{ steps.deploy.outcome }}"
