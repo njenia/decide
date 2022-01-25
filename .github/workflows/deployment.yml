@@ -28,6 +28,8 @@ jobs:
           exit 1
       - name: output_deploy_env
         run: echo "::set-output name=depenv::knknknk"
+      - name: print_out
+        run: echo "depenv->${{ steps.output_deploy_env.outputs.depenv }}"
   deployment:
     needs: ['env_processing']
     runs-on: ubuntu-latest
