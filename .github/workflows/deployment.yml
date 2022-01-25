@@ -63,4 +63,4 @@ jobs:
           SLACK_LINK_NAMES: true
       - id: call_e2e_tests
         name: Call E2E workflow
-        uses: ./.github/actions/e2e_test/action.yml
+        uses: ./.github/actions/e2e_test
