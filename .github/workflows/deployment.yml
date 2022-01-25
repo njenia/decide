@@ -12,19 +12,39 @@ on:
 
 
 jobs:
-  job1:
+  env_processing:
     runs-on: ubuntu-latest
-    # Map a step output to a job output
     outputs:
-      output1: ${{ steps.step1.outputs.test }}
-      output2: ${{ steps.step2.outputs.test }}
+      deploy_env: ${{ steps.output_deploy_env.outputs.deploy_env }}
     steps:
-      - id: step1
-        run: echo "::set-output name=test::hello"
-      - id: step2
-        run: echo "::set-output name=test::world"
-  job2:
+      - uses: actions/checkout@v2
+      - id: set_environment
+        run: |
+          [[ ${{ github.ref }} == 'refs/heads/master' && ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
+      - id: output_deploy_env
+        run: |
+          echo "::set-output name=deploy_env::${{ env.DEPLOY_ENV }}"
+      - id: fail_on_invalid_env
+        if: (env.DEPLOY_ENV != 'dev' && env.DEPLOY_ENV != 'demo' && env.DEPLOY_ENV != 'production')
+        run: |
+          echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
+          exit 1
+  deployment:
+    needs: ['env_processing']
     runs-on: ubuntu-latest
-    needs: job1
+    environment: ${{ needs.env_processing.outputs.deploy_env }}
+    if: success()
     steps:
-      - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
+      - name: Notify Slack - start deploy
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
+          MSG_MINIMAL: actions url
+          SLACK_USERNAME: Deployment
+          SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
+          SLACK_FOOTER: ""
+          SLACK_COLOR: "#0000af"
+          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy starting!"
+          SLACK_LINK_NAMES: true
+      - name: deploy
+        run: echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
