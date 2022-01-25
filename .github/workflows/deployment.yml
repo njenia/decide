@@ -38,13 +38,6 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
-          MSG_MINIMAL: actions url
-          SLACK_USERNAME: Deployment
-          SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
-          SLACK_FOOTER: ""
-          SLACK_COLOR: "#005aaf"
-          SLACK_MESSAGE: "something..."
-          SLACK_LINK_NAMES: true
       - id: deploy
         run: |
           echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
