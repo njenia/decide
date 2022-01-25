@@ -37,7 +37,7 @@ jobs:
       - name: Notify Slack - deploy start
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
+          SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
           MSG_MINIMAL: actions url
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
