@@ -46,4 +46,4 @@ jobs:
           SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy starting!"
           SLACK_LINK_NAMES: true
       - name: deploy
-        run: echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
+        run: echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ needs.env_processing.env.deploy_env }},  ${{ jobs.env_processing.env.deploy_env }}, ${{ secrets.secret_1 }}"
