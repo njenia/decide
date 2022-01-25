@@ -10,7 +10,6 @@ on:
     branches:
       - master
 
-
 jobs:
   env_processing:
     runs-on: ubuntu-latest
@@ -35,16 +34,39 @@ jobs:
     environment: ${{ needs.env_processing.outputs.deploy_env }}
     if: success()
     steps:
-      - name: Notify Slack - start deploy
+      - name: Notify Slack - deploy start
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: https://hooks.slack.com/services/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 # test webhook ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
           MSG_MINIMAL: actions url
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
-          SLACK_COLOR: "#0000af"
-          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy starting!"
+          SLACK_COLOR: "##005aaf"
+          SLACK_MESSAGE: "@here [**${{ needs.env_processing.outputs.deploy_env }}**] deploy started"
           SLACK_LINK_NAMES: true
-      - name: deploy
-        run: echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
+      - id: deploy
+        run: |
+          echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
+          exit 1
+      - id: set_deploy_status_success
+        if: success()
+        run: |
+          echo "DEPLOY_RESULT_TEXT=finished" >> $GITHUB_ENV
+          echo "DEPLOY_RESULT_COLOR=#00ff00" >> $GITHUB_ENV
+      - id: set_deploy_status_failure
+        if: steps.deploy.outcome != 'success'
+        run: |
+          echo "DEPLOY_RESULT_TEXT=failed" >> $GITHUB_ENV
+          echo "DEPLOY_RESULT_COLOR=#ff0000" >> $GITHUB_ENV
+      - name: Notify Slack - deploy finished
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: https://hooks.slack.com/services/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 # test webhook ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
+          MSG_MINIMAL: actions url
+          SLACK_USERNAME: Deployment
+          SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
+          SLACK_FOOTER: ""
+          SLACK_COLOR: $DEPLOY_RESULT_COLOR
+          SLACK_MESSAGE: "@here [**${{ needs.env_processing.outputs.deploy_env }}**] deploy ${{ env.DEPLOY_RESULT_TEXT }}"
+          SLACK_LINK_NAMES: true
