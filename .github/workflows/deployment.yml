@@ -39,7 +39,7 @@ jobs:
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
           SLACK_COLOR: "#0000af"
-          SLACK_MESSAGE: "@here [${{ env.DEPLOY_ENV }}] deploy starting!"
+          SLACK_MESSAGE: "@here [$DEPLOY_ENV] deploy starting!"
           SLACK_LINK_NAMES: true
       - name: deploy
-        run: echo "deploy ${{env.DEPLOY_ENV}}, ${{ github.event.inputs.secret_1 }}"
+        run: echo "deploy ${{env.DEPLOY_ENV}}, ${{ secrets.secret_1 }}"
