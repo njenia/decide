@@ -15,7 +15,7 @@ jobs:
   env_processing:
     runs-on: ubuntu-latest
     outputs:
-      deploy_env: ${{ steps.output_deploy_env.outputs.deploy_env }}
+      deploy_env: ${{ steps.output_deploy_env.outputs.depenv }}
     steps:
       - uses: actions/checkout@v2
       - name: set_environment
@@ -27,7 +27,7 @@ jobs:
           echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
           exit 1
       - name: output_deploy_env
-        run: echo "::set-output name=deploy_env::knknknk"
+        run: echo "::set-output name=depenv::knknknk"
   deployment:
     needs: ['env_processing']
     runs-on: ubuntu-latest
