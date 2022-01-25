@@ -61,6 +61,7 @@ jobs:
           echo "DEPLOY_RESULT_COLOR=#ff0000" >> $GITHUB_ENV
       - name: Notify Slack - deploy finished
         uses: rtCamp/action-slack-notify@v2
+        if: always()
         env:
           SLACK_WEBHOOK: https://hooks.slack.com/services/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 # test webhook ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
           MSG_MINIMAL: actions url
