@@ -61,6 +61,5 @@ jobs:
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: "@here *${{ needs.env_processing.outputs.deploy_env }}* deploy - ${{ steps.deploy.outcome }}"
           SLACK_LINK_NAMES: true
-      - id: call_e2e_tests
-        name: Call E2E workflow
-        uses: njenia/decide/.github/workflows/post_deploy.yml@master
+  call_e2e:
+    uses: njenia/decide/.github/workflows/post_deploy.yml@master
