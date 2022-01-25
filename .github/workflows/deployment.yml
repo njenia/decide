@@ -37,7 +37,7 @@ jobs:
       - name: Notify Slack - deploy start
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: https://hooks.slack.com/services/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 # test webhook ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
           MSG_MINIMAL: actions url
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
@@ -63,7 +63,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         if: always()
         env:
-          SLACK_WEBHOOK: https://hooks.slack.com/services/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 # test webhook ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
           MSG_MINIMAL: actions url
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
