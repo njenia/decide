@@ -27,7 +27,7 @@ jobs:
           echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
           exit 1
       - name: output_deploy_env
-        run: echo "::set-output name=deploy_env::${{ env.DEPLOY_ENV }}"
+        run: echo env->${{ env.DEPLOY_ENV }} && echo "::set-output name=deploy_env::${{ env.DEPLOY_ENV }}"
   deployment:
     needs: ['env_processing']
     runs-on: ubuntu-latest
