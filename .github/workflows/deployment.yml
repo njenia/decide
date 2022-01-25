@@ -34,6 +34,7 @@ jobs:
     environment: ${{ needs.env_processing.outputs.deploy_env }}
     if: success()
     steps:
+      - uses: actions/checkout@v2
       - name: Notify Slack - deploy start
         uses: rtCamp/action-slack-notify@v2
         env:
