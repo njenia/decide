@@ -15,7 +15,7 @@ jobs:
   env_processing:
     runs-on: ubuntu-latest
     outputs:
-      deploy_env: ${{ steps.output_deploy_env.outputs.deploy_env }}
+      deploy_env: lmlml
     steps:
       - uses: actions/checkout@v2
       - name: set_environment
