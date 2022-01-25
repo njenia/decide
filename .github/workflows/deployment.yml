@@ -29,7 +29,7 @@ jobs:
       - name: output_deploy_env
         run: echo "::set-output name=depenv::knknknk"
       - name: print_out
-        run: echo "depenv->${{ steps }}"
+        run: echo "depenv->${{ toJson(steps) }}"
   deployment:
     needs: ['env_processing']
     runs-on: ubuntu-latest
@@ -48,4 +48,4 @@ jobs:
           SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy starting!"
           SLACK_LINK_NAMES: true
       - name: deploy
-        run: echo "deploy ${{ needs.env_processing.outputs.depenv }}, env->${{ needs.env_processing }}, ${{ secrets.secret_1 }}"
+        run: echo "deploy ${{ needs.env_processing.outputs.depenv }}, env->${{ toJson(needs.env_processing) }}, ${{ secrets.secret_1 }}"
