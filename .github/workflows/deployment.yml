@@ -18,9 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: set environment
         run: |
-          [[ ${{ github.ref }} == 'refs/heads/maste' && ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
-      - name: print env
-        run: echo ${{ env.DEPLOY_ENV }}
+          [[ ${{ github.ref }} == 'refs/heads/master' && ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
       - name: validate env
         if: (env.DEPLOY_ENV != 'dev' && env.DEPLOY_ENV != 'demo' && env.DEPLOY_ENV != 'production')
         run: |
@@ -32,5 +30,16 @@ jobs:
     environment: $DEPLOY_ENV
     if: success()
     steps:
+      - name: Notify Slack - start deploy
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SPECTRAL_SLACK_WEBHOOK_URL }}
+          MSG_MINIMAL: actions url
+          SLACK_USERNAME: Deployment
+          SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
+          SLACK_FOOTER: ""
+          SLACK_COLOR: "#0000af"
+          SLACK_MESSAGE: "@here [${{ env.DEPLOY_ENV }}] deploy starting!"
+          SLACK_LINK_NAMES: true
       - name: deploy
         run: echo "deploy ${{env.DEPLOY_ENV}}, ${{ github.event.inputs.secret_1 }}"
