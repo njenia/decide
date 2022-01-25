@@ -64,4 +64,4 @@ jobs:
           SLACK_LINK_NAMES: true
   call_e2e:
     needs: deployment
-    uses: njenia/decide/.github/workflows/post_deploy.yml@master
+    uses: .github/workflows/post_deploy.yml
