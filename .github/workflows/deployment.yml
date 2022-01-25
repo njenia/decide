@@ -43,7 +43,7 @@ jobs:
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
           SLACK_COLOR: "##005aaf"
-          SLACK_MESSAGE: "@here [**${{ needs.env_processing.outputs.deploy_env }}**] deploy started"
+          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy started"
           SLACK_LINK_NAMES: true
       - id: deploy
         run: |
@@ -69,5 +69,5 @@ jobs:
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
           SLACK_COLOR: $DEPLOY_RESULT_COLOR
-          SLACK_MESSAGE: "@here [**${{ needs.env_processing.outputs.deploy_env }}**] deploy ${{ env.DEPLOY_RESULT_TEXT }}"
+          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy ${{ env.DEPLOY_RESULT_TEXT }}"
           SLACK_LINK_NAMES: true
