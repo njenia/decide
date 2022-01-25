@@ -12,11 +12,13 @@ on:
 
 
 jobs:
-  env_validation:
+  env_processing:
     runs-on: ubuntu-latest
+    outputs:
+      deploy_env: ${{ steps.output_deploy_env.outputs.deploy_env }}
     steps:
       - uses: actions/checkout@v2
-      - name: set environment
+      - name: set_environment
         run: |
           [[ ${{ github.ref }} == 'refs/heads/master' && ${{ github.event_name }} == 'push' ]] && echo "DEPLOY_ENV=dev" >> $GITHUB_ENV || echo "DEPLOY_ENV=${{ github.event.inputs.deploy_env }}" >> $GITHUB_ENV
       - name: validate env
@@ -24,10 +26,12 @@ jobs:
         run: |
           echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{ github.event.inputs.deploy_env }}"
           exit 1
+      - name: output_deploy_env
+        run: echo "::set-output name=deploy_env::${{ env.DEPLOY_ENV }}"
   deployment:
-    needs: ['env_validation']
+    needs: ['env_processing']
     runs-on: ubuntu-latest
-    environment: $DEPLOY_ENV
+    environment: ${{ needs.env_processing.outputs.deploy_env }}
     if: success()
     steps:
       - name: Notify Slack - start deploy
@@ -39,7 +43,7 @@ jobs:
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
           SLACK_COLOR: "#0000af"
-          SLACK_MESSAGE: "@here [$DEPLOY_ENV] deploy starting!"
+          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy starting!"
           SLACK_LINK_NAMES: true
       - name: deploy
-        run: echo "deploy ${{env.DEPLOY_ENV}}, ${{ secrets.secret_1 }}"
+        run: echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
