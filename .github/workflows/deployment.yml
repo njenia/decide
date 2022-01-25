@@ -49,16 +49,6 @@ jobs:
         run: |
           echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
           exit 1
-      - id: set_deploy_status_success
-        if: always()
-        run: |
-          echo "DEPLOY_RESULT_TEXT=finished" >> $GITHUB_ENV
-          echo "DEPLOY_RESULT_COLOR=#00ff00" >> $GITHUB_ENV
-      - id: set_deploy_status_failure
-        if: steps.deploy.outcome != 'success'
-        run: |
-          echo "DEPLOY_RESULT_TEXT=failed" >> $GITHUB_ENV
-          echo "DEPLOY_RESULT_COLOR=#ff0000" >> $GITHUB_ENV
       - name: Notify Slack - deploy finished
         uses: rtCamp/action-slack-notify@v2
         if: always()
@@ -68,6 +58,6 @@ jobs:
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
-          SLACK_COLOR: $DEPLOY_RESULT_COLOR
-          SLACK_TITLE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy - ${{ steps.deploy.outcome }}"
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_FOOTER: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy - ${{ steps.deploy.outcome }}"
           SLACK_LINK_NAMES: true
