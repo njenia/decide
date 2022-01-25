@@ -57,7 +57,6 @@ jobs:
           MSG_MINIMAL: actions url
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
-          SLACK_FOOTER: ""
           SLACK_COLOR: ${{ job.status }}
           SLACK_FOOTER: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy - ${{ steps.deploy.outcome }}"
           SLACK_LINK_NAMES: true
