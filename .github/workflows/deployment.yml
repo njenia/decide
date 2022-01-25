@@ -42,8 +42,8 @@ jobs:
           SLACK_USERNAME: Deployment
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
-          SLACK_COLOR: "##005aaf"
-          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy started"
+          SLACK_COLOR: "#005aaf"
+          SLACK_MESSAGE: "something..."
           SLACK_LINK_NAMES: true
       - id: deploy
         run: |
