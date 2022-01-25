@@ -55,6 +55,7 @@ jobs:
           echo "DEPLOY_RESULT_TEXT=finished" >> $GITHUB_ENV
           echo "DEPLOY_RESULT_COLOR=#00ff00" >> $GITHUB_ENV
       - id: report_deploy
+        if: always()
         run: echo ${{steps.deploy.outcome}}
       - id: set_deploy_status_failure
         if: steps.deploy.outcome != 'success'
