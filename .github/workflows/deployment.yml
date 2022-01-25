@@ -50,14 +50,10 @@ jobs:
           echo "deploy ${{ needs.env_processing.outputs.deploy_env }}, ${{ secrets.secret_1 }}"
           exit 1
       - id: set_deploy_status_success
-        if: success()
+        if: always()
         run: |
           echo "DEPLOY_RESULT_TEXT=finished" >> $GITHUB_ENV
           echo "DEPLOY_RESULT_COLOR=#00ff00" >> $GITHUB_ENV
-      - id: report_deploy
-        name: report deploy
-        if: steps.deploy.outcome != 'success'
-        run: echo deploy outcome->${{steps.deploy.outcome}}
       - id: set_deploy_status_failure
         if: steps.deploy.outcome != 'success'
         run: |
@@ -73,5 +69,5 @@ jobs:
           SLACK_ICON: "https://spectralops.io/wp-content/themes/spectral-theme/assets/images/favicon/favicon.ico"
           SLACK_FOOTER: ""
           SLACK_COLOR: $DEPLOY_RESULT_COLOR
-          SLACK_MESSAGE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy ${{ env.DEPLOY_RESULT_TEXT }}"
+          SLACK_TITLE: "@here [${{ needs.env_processing.outputs.deploy_env }}] deploy - ${{ steps.deploy.outcome }}"
           SLACK_LINK_NAMES: true
