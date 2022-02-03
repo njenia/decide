@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "::set-output name=deploy_env::${{ env.DEPLOY_ENV }}"
       - id: fail_on_invalid_env
-        if: (env.DEPLOY_ENV != 'dev' && env.DEPLOY_ENV != 'demo' && env.DEPLOY_ENV != 'production') || (${{ github.ref }} != 'refs/heads/master')
+        if: (env.DEPLOY_ENV != 'dev' && env.DEPLOY_ENV != 'demo' && env.DEPLOY_ENV != 'production') || ((env.DEPLOY_ENV == 'production' || env.DEPLOY_ENV == 'demo') && '${{ github.ref }}' != 'refs/heads/master')
         run: |
           echo "deploy environment has to be one of 'dev'/'demo'/'production'. Received: ${{env.DEPLOY_ENV}} branch: ${{ github.ref }} /// ${{ github.event.inputs.deploy_env }}"
           exit 1
