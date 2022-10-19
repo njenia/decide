@@ -1,0 +1,17 @@
+# spectralops.io - example for remote custom rules
+# Read more about our detectors engine to learn more about our rules engine capabilities, tricks and tips in SpectralOps docs.
+
+rules:
+- id: ADFR002                               # Unique rule ID
+  name: Adafruit IO API Key                 # Verbal description of the finding
+  tags: []                                  # By default remote custom rules run on each Spectral scan. use --exclude-tags=custom-rules to disable custom rules.
+  # - custom-rules
+  applies_to:
+  - ".*$"                                   # Scan any file name
+  applies_not_to:
+  - ".*\\.(storyboard|xib)$"                # Ignore some false positive file extensions.
+  severity: error                           # Valid values are 'info', 'warning' and 'error'.
+  pattern_group:
+    patterns:
+    - pattern: "aio_[[:alnum:]]{28,32}"     # Regex pattern of the finding/secret we wish to alert about.
+      pattern_type: multi                   # For each scanned file: single - stop after one finding; multi - find all.
