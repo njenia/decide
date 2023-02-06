@@ -1,0 +1,15 @@
+# you can omit the reporter section entirely (you'll get a stylish reporter by default)
+reporter:
+    outputs:
+        stylish: {}         # nice looking CLI reports
+        # stylish: { html: "output.html" }  # produce HTML reports
+        # stylish: { csv: "output.csv" }  # produce CSV reports
+
+        # log:              # use a logger
+        #   json: true      # enable JSON logging
+        #   file: out.json  # put output in a file
+
+        # junit: {}        # Great for integrating with CI systems that understand JUnit XML (all of them, probably)
+        # ignores: {}      # A reporter output that streams results as ignores
+
+# AKIA5HLD5V423AEB0KWB
