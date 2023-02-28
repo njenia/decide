@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite id="0" name="[decide] CLD001 - Visible AWS Key" package="testsuite/[decide] CLD001 - Visible AWS Key" tests="115" errors="0" failures="115" hostname="localhost" timestamp="2023-01-30T18:11:53.656113Z" time="0">
+    <testcase name="Visible AWS Key:a:10:1" time="0" classname="CLD001" file="a#L10">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:11:1" time="0" classname="CLD001" file="a#L11">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:12:1" time="0" classname="CLD001" file="a#L12">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:13:1" time="0" classname="CLD001" file="a#L13">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:14:1" time="0" classname="CLD001" file="a#L14">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:15:1" time="0" classname="CLD001" file="a#L15">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:16:1" time="0" classname="CLD001" file="a#L16">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:17:1" time="0" classname="CLD001" file="a#L17">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:18:1" time="0" classname="CLD001" file="a#L18">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:19:1" time="0" classname="CLD001" file="a#L19">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:20:1" time="0" classname="CLD001" file="a#L20">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:21:1" time="0" classname="CLD001" file="a#L21">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:22:1" time="0" classname="CLD001" file="a#L22">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:23:1" time="0" classname="CLD001" file="a#L23">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:24:1" time="0" classname="CLD001" file="a#L24">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:25:1" time="0" classname="CLD001" file="a#L25">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:26:1" time="0" classname="CLD001" file="a#L26">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:27:1" time="0" classname="CLD001" file="a#L27">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:28:1" time="0" classname="CLD001" file="a#L28">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:29:1" time="0" classname="CLD001" file="a#L29">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:30:1" time="0" classname="CLD001" file="a#L30">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:31:1" time="0" classname="CLD001" file="a#L31">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:32:1" time="0" classname="CLD001" file="a#L32">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:33:1" time="0" classname="CLD001" file="a#L33">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:34:1" time="0" classname="CLD001" file="a#L34">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:35:1" time="0" classname="CLD001" file="a#L35">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:36:1" time="0" classname="CLD001" file="a#L36">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:37:1" time="0" classname="CLD001" file="a#L37">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:38:1" time="0" classname="CLD001" file="a#L38">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:39:1" time="0" classname="CLD001" file="a#L39">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:40:1" time="0" classname="CLD001" file="a#L40">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:41:1" time="0" classname="CLD001" file="a#L41">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:42:1" time="0" classname="CLD001" file="a#L42">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:43:1" time="0" classname="CLD001" file="a#L43">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:44:1" time="0" classname="CLD001" file="a#L44">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:45:1" time="0" classname="CLD001" file="a#L45">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:46:1" time="0" classname="CLD001" file="a#L46">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:47:1" time="0" classname="CLD001" file="a#L47">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:48:1" time="0" classname="CLD001" file="a#L48">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:49:1" time="0" classname="CLD001" file="a#L49">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:50:1" time="0" classname="CLD001" file="a#L50">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:51:1" time="0" classname="CLD001" file="a#L51">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:52:1" time="0" classname="CLD001" file="a#L52">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:53:1" time="0" classname="CLD001" file="a#L53">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:54:1" time="0" classname="CLD001" file="a#L54">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:55:1" time="0" classname="CLD001" file="a#L55">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:56:1" time="0" classname="CLD001" file="a#L56">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:57:1" time="0" classname="CLD001" file="a#L57">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:58:1" time="0" classname="CLD001" file="a#L58">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:59:1" time="0" classname="CLD001" file="a#L59">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:60:1" time="0" classname="CLD001" file="a#L60">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:61:1" time="0" classname="CLD001" file="a#L61">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:62:1" time="0" classname="CLD001" file="a#L62">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:63:1" time="0" classname="CLD001" file="a#L63">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:64:1" time="0" classname="CLD001" file="a#L64">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:65:1" time="0" classname="CLD001" file="a#L65">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:66:1" time="0" classname="CLD001" file="a#L66">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:67:1" time="0" classname="CLD001" file="a#L67">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:68:1" time="0" classname="CLD001" file="a#L68">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:69:1" time="0" classname="CLD001" file="a#L69">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:70:1" time="0" classname="CLD001" file="a#L70">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:a:71:1" time="0" classname="CLD001" file="a#L71">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:bb/a:1:0" time="0" classname="CLD001" file="bb/a#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:bb/a1:1:0" time="0" classname="CLD001" file="bb/a1#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:bb/x.zip:3:55" time="0" classname="CLD001" file="bb/x.zip#L3">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:bb/z.zip:2:55" time="0" classname="CLD001" file="bb/z.zip#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_a/secret1.txt:1:0" time="0" classname="CLD001" file="dir_a/secret1.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_a/secret1.txt:2:1" time="0" classname="CLD001" file="dir_a/secret1.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_b/secret1.txt:1:0" time="0" classname="CLD001" file="dir_b/secret1.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_b/secret2.txt:1:0" time="0" classname="CLD001" file="dir_b/secret2.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_b/secret2.txt:2:1" time="0" classname="CLD001" file="dir_b/secret2.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_c/secret3.txt:1:0" time="0" classname="CLD001" file="dir_c/secret3.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_c/secret3.txt:2:1" time="0" classname="CLD001" file="dir_c/secret3.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:dir_c/secret3.txt:3:1" time="0" classname="CLD001" file="dir_c/secret3.txt#L3">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret1.txt:1:0" time="0" classname="CLD001" file="secret1.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret1.txt:2:1" time="0" classname="CLD001" file="secret1.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:1:0" time="0" classname="CLD001" file="secret2.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:2:1" time="0" classname="CLD001" file="secret2.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:3:1" time="0" classname="CLD001" file="secret2.txt#L3">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:4:1" time="0" classname="CLD001" file="secret2.txt#L4">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:5:1" time="0" classname="CLD001" file="secret2.txt#L5">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:6:1" time="0" classname="CLD001" file="secret2.txt#L6">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:7:1" time="0" classname="CLD001" file="secret2.txt#L7">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:8:1" time="0" classname="CLD001" file="secret2.txt#L8">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:9:1" time="0" classname="CLD001" file="secret2.txt#L9">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:10:1" time="0" classname="CLD001" file="secret2.txt#L10">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:11:1" time="0" classname="CLD001" file="secret2.txt#L11">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret2.txt:12:1" time="0" classname="CLD001" file="secret2.txt#L12">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:1:0" time="0" classname="CLD001" file="secret3.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:2:1" time="0" classname="CLD001" file="secret3.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:3:1" time="0" classname="CLD001" file="secret3.txt#L3">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:4:1" time="0" classname="CLD001" file="secret3.txt#L4">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:5:1" time="0" classname="CLD001" file="secret3.txt#L5">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:6:1" time="0" classname="CLD001" file="secret3.txt#L6">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:7:1" time="0" classname="CLD001" file="secret3.txt#L7">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:8:1" time="0" classname="CLD001" file="secret3.txt#L8">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:9:1" time="0" classname="CLD001" file="secret3.txt#L9">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:10:1" time="0" classname="CLD001" file="secret3.txt#L10">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:11:1" time="0" classname="CLD001" file="secret3.txt#L11">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:12:1" time="0" classname="CLD001" file="secret3.txt#L12">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret3.txt:13:1" time="0" classname="CLD001" file="secret3.txt#L13">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret4.txt:1:0" time="0" classname="CLD001" file="secret4.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secret4.txt:2:1" time="0" classname="CLD001" file="secret4.txt#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secrethere:1:0" time="0" classname="CLD001" file="secrethere#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secrethere:2:1" time="0" classname="CLD001" file="secrethere#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secrethere1:1:0" time="0" classname="CLD001" file="secrethere1#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:secrethere1:2:1" time="0" classname="CLD001" file="secrethere1#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:t4.txt:1:0" time="0" classname="CLD001" file="t4.txt#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-a:1:0" time="0" classname="CLD001" file="test-sha-a#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-a:2:1" time="0" classname="CLD001" file="test-sha-a#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-b:1:0" time="0" classname="CLD001" file="test-sha-b#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-b:2:1" time="0" classname="CLD001" file="test-sha-b#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-c:1:0" time="0" classname="CLD001" file="test-sha-c#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-d:1:0" time="0" classname="CLD001" file="test-sha-d#L1">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible AWS Key:test-sha-d:2:1" time="0" classname="CLD001" file="test-sha-d#L2">
+      <failure type="" message="" />
+    </testcase>
+  </testsuite>
+  <testsuite id="1" name="[decide] DB001 - Visible Database URL" package="testsuite/[decide] DB001 - Visible Database URL" tests="5" errors="0" failures="5" hostname="localhost" timestamp="2023-01-30T18:11:53.65661Z" time="0">
+    <testcase name="Visible Database URL:src/some.config:2:1" time="0" classname="DB001" file="src/some.config#L2">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible Database URL:src/some.config:3:1" time="0" classname="DB001" file="src/some.config#L3">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible Database URL:src/some.config:4:1" time="0" classname="DB001" file="src/some.config#L4">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible Database URL:src/some.config:5:1" time="0" classname="DB001" file="src/some.config#L5">
+      <failure type="" message="" />
+    </testcase>
+    <testcase name="Visible Database URL:src/some.config:6:1" time="0" classname="DB001" file="src/some.config#L6">
+      <failure type="" message="" />
+    </testcase>
+  </testsuite>
+  <testsuite id="2" name="summary" package="testsuite/summary" tests="1" errors="0" failures="1" hostname="localhost" timestamp="2023-01-30T18:11:53.656622Z" time="0.068">
+    <testcase name="Scan summary" time="0.068">
+      <failure type="scan_summary" message="scanned 75020 bytes and 48 files in 68ms" />
+    </testcase>
+  </testsuite>
+</testsuites>
