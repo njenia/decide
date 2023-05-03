@@ -2,17 +2,24 @@ name: Upload artifact
 
 on: [push]
 
+env:
+  SPECTRAL_DSN: ${{secrets.SPECTRAL_DSN}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create file
-        run: echo "Hello, world!" > hello.txt
+      - uses: actions/checkout@v2
+      - name: Install and run Spectral CI
+        uses: spectralops/spectral-github-action@v2
+        with:
+          spectral-dsn: ${{ env.SPECTRAL_DSN }}
+          spectral-args: scan --ok  --include-tags base,audit --json-v2 spectral-output.json
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: hello.txt
+          path: spectral-output.json
 
