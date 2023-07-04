@@ -1,0 +1,38 @@
+# spectralops.io - example for custom rules
+# Read more about our detectors engine to learn more about our rules engine capabilities, tricks and tips in SpectralOps docs.
+
+rules:
+#################### FILE CONTENT ####################
+# provider "aws" {
+#   region = "us-west-1"
+# }
+# resource "aws_any_resource" "test_res_name" {
+#     tags = {
+#         team = "spectral"
+#     }
+# }
+#################### END FILE CONTENT ####################
+- id: SPCTRINTR001
+  name: Findings ignore object defined in spectral.yaml
+  tags:
+  - spectral-introspection
+#   link: https://guides.spectralops.io/docs/
+  applies_to:
+  - .*\.yaml
+  severity: informational
+  pattern_group:
+    patterns:
+    - pattern: |
+        package policies
+          Policy[result] {
+               doc := input[_]
+               ignores := doc.match_ignores.ignores
+               ignore_object := ignores[index]
+               filter_text := concat(", ", [x | ignore_object[x]])  
+               result := {
+                    "id": "SPCTRINTR001",
+                    "keypath": sprintf("match_ignores.ignores[%d]", [index]),
+                    "fix": sprintf("filter of (%s)", [filter_text])
+               }
+          }
+    #  pattern_type: opa_iac
